@@ -12,7 +12,7 @@ const navItems = [
 const Nav = () => {
     const pathname = usePathname();
   return (
-    <nav className='flex justify-around py-2'>
+    <nav className='flex justify-around py-2 bg-white'>
     <Link href="/">
                 <div className="flex items-center gap-2.5 cursor-pointer">
                     <Image
