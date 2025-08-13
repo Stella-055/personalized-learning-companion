@@ -136,6 +136,7 @@ body {
   h1 {
     @apply text-2xl font-bold;
   }
+
 }
 
 @layer components {
