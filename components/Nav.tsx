@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from "next/link";
 import {usePathname} from "next/navigation";
+import { SignInButton, SignedIn, SignedOut, UserButton ,SignUpButton} from "@clerk/nextjs";
 import {cn} from "@/lib/utils";
 const navItems = [
     { label:'Home', href: '/' },
@@ -35,7 +36,15 @@ const Nav = () => {
                 </Link>
             ))}
         </nav>
-         
+        <SignedOut>
+        <SignUpButton/>
+                    <SignInButton>
+                        <button className="btn-signin">Sign In</button>
+                    </SignInButton>
+                </SignedOut>
+                <SignedIn>
+                    <UserButton />
+                </SignedIn>
                 
             </div>
     </nav>

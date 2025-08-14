@@ -17,7 +17,7 @@ export default function Home() {
         <CompanionCard  id="1" name="Science" topic="Neura The Brainy Explorer" subject="Neural Network of The Brain" duration={45} color="#e5d0ff" bookmarked={false}/>  
       </section>
      <section className="home-section">
-      <CompanionList title="Recent Sessions " classNames="w-2/3" companions={recentSessions}/>
+      <CompanionList title="Recent Sessions " classNames="md:w-2/3 full " companions={recentSessions}/>
       <Cta/>
      </section>
 
