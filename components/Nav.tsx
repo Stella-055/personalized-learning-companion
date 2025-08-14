@@ -6,14 +6,14 @@ import { SignInButton, SignedIn, SignedOut, UserButton ,SignUpButton} from "@cle
 import {cn} from "@/lib/utils";
 const navItems = [
     { label:'Home', href: '/' },
-    { label: 'Companions', href: '/companions' },
+    { label: 'Companion', href: '/companion' },
     { label: 'My Journey', href: 'my-journey' },
 ]
 
 const Nav = () => {
     const pathname = usePathname();
   return (
-    <nav className='flex justify-around py-2 bg-white'>
+    <nav className=' fixed w-full flex justify-around py-2 bg-white'>
     <Link href="/">
                 <div className="flex items-center gap-2.5 cursor-pointer">
                     <Image
@@ -37,7 +37,7 @@ const Nav = () => {
             ))}
         </nav>
         <SignedOut>
-        <SignUpButton/>
+        
                     <SignInButton>
                         <button className="btn-signin">Sign In</button>
                     </SignInButton>

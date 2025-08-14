@@ -1,10 +1,10 @@
-
+import { PricingTable } from "@clerk/nextjs"
 
 const page = () => {
   return (
-    <div className="">
-      
-    </div>
+    <main  className=" flex flex-wrap justify-center pt-20">
+      <PricingTable />
+    </main >
   )
 }
 

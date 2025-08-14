@@ -6,7 +6,7 @@ import { recentSessions } from "@/lib/constants";
 
 export default function Home() {
   return (
-   <main >
+   <main  className="pt-20">
     <h1 className=''>Popular Companions</h1>
       <section className="home-section">
        
