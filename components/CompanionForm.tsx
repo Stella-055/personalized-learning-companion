@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 import {
     Form,
     FormControl,
-    FormDescription,
+  
     FormField,
     FormItem,
     FormLabel,
@@ -25,7 +25,7 @@ import {
     SelectValue,
 } from "@/components/ui/select"
 import {Textarea} from "@/components/ui/textarea";
-//import {createCompanion} from "@/lib/actions/companion.actions";
+import {createCompanion} from "@/lib/actions/Companion.action";
 import {redirect} from "next/navigation";
 
 const formSchema = z.object({
@@ -51,7 +51,15 @@ const CompanionForm = () => {
     })
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        
+        const companion = await createCompanion(values);
+
+        if(companion) {
+            redirect(`/companions/${companion.id}`);
+        } else {
+            console.log('Failed to create a companion');
+            redirect('/');
+        }
+    
     }
 
     return (
