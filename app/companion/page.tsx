@@ -1,16 +1,36 @@
+import {getAllCompanions} from "@/lib/actions/Companion.action";
+import CompanionCard from "@/components/CompanionCard";
+import {getSubjectColor} from "@/lib/utils";
+import SearchInput from "@/components/SearchInput";
+import SubjectFilter from "@/components/SubjectFilter";
 
-import CompanionForm from "@/components/CompanionForm";
-const page = () => {
-  return (
-    <main className="min-lg:w-1/3 min-md:w-2/3 items-center justify-center">
-           
-                <article className="w-full gap-4 flex flex-col">
-                    <h1>Companion Builder</h1>
+const CompanionsLibrary = async ({ searchParams }: SearchParams) => {
+    const filters = await searchParams;
+    const subject = filters.subject ? filters.subject : '';
+    const topic = filters.topic ? filters.topic : '';
 
-                    <CompanionForm />
-                </article>
-                </main>
-  )
+    const companions = await getAllCompanions({ subject, topic });
+
+    return (
+        <main>
+            <section className="flex justify-between gap-4 max-sm:flex-col">
+                <h1>Companion Library</h1>
+                <div className="flex gap-4">
+                    <SearchInput />
+                    <SubjectFilter />
+                </div>
+            </section>
+            <section className="companions-grid">
+                {companions.map((companion) => (
+                    <CompanionCard
+                        key={companion.id}
+                        {...companion}
+                        color={getSubjectColor(companion.subject)}
+                    />
+                ))}
+            </section>
+        </main>
+    )
 }
 
-export default page
+export default CompanionsLibrary
