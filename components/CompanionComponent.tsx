@@ -15,6 +15,7 @@ enum CallStatus {
     FINISHED = 'FINISHED',
 }
 
+
 const CompanionComponent = ({ companionId, subject, topic, name, userName, userImage, style, voice }: CompanionComponentProps) => {
     const [callStatus, setCallStatus] = useState<CallStatus>(CallStatus.INACTIVE);
     const [isSpeaking, setIsSpeaking] = useState(false);
@@ -41,7 +42,7 @@ const CompanionComponent = ({ companionId, subject, topic, name, userName, userI
             addToSessionHistory(companionId)
         }
 
-        const onMessage = (message: Message) => {
+        const onMessage = (message:any) => {
             if(message.type === 'transcript' && message.transcriptType === 'final') {
                 const newMessage= { role: message.role, content: message.transcript}
                 setMessages((prev) => [newMessage, ...prev])
