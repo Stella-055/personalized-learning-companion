@@ -1,31 +1,32 @@
-
 import Image from "next/image";
 import Link from "next/link";
 interface CompanionCardProps {
-    id: string;
-    name: string;
-    topic: string;
-    subject: string;
-    duration: number;
-    color: string;
-    bookmarked: boolean;
-  }
+  id: string;
+  name: string;
+  topic: string;
+  subject: string;
+  duration: number;
+  color: string;
+  bookmarked: boolean;
+}
 
 const CompanionCard = ({
-    id,
-    name,
-    topic,
-    subject,
-    duration,
-    color,
-    bookmarked,
-  }: CompanionCardProps) => {
-
+  id,
+  name,
+  topic,
+  subject,
+  duration,
+  color,
+  bookmarked,
+}: CompanionCardProps) => {
   return (
-    <article style={{backgroundColor:color}} className="flex flex-col rounded-4xl border border-black px-4 py-4 gap-5 w-full min-lg:max-w-[410px] justify-between">
-   <div className="flex justify-between items-center">
+    <article
+      style={{ backgroundColor: color }}
+      className="flex flex-col rounded-4xl border border-black px-4 py-4 gap-5 w-full min-lg:max-w-[410px] justify-between"
+    >
+      <div className="flex justify-between items-center">
         <div className="subject-badge">{subject}</div>
-        <button className="companion-bookmark" >
+        <button className="companion-bookmark">
           <Image
             src={
               bookmarked ? "/icons/bookmark-filled.svg" : "/icons/bookmark.svg"
@@ -55,7 +56,7 @@ const CompanionCard = ({
         </button>
       </Link>
     </article>
-  )
-}
+  );
+};
 
-export default CompanionCard
+export default CompanionCard;

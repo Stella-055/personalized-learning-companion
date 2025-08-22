@@ -136,7 +136,6 @@ body {
   h1 {
     @apply text-2xl font-bold;
   }
-
 }
 
 @layer components {
@@ -146,7 +145,7 @@ body {
   .companions-grid {
     @apply flex flex-wrap gap-4 w-full max-md:justify-center;
   }
-  
+
   .subject-badge {
     @apply bg-black text-white rounded-4xl text-sm px-2 py-1 capitalize;
   }

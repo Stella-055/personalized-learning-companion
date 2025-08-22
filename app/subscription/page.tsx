@@ -1,11 +1,11 @@
-import { PricingTable } from "@clerk/nextjs"
+import { PricingTable } from "@clerk/nextjs";
 
 const page = () => {
   return (
-    <main  className=" flex flex-wrap justify-center pt-20">
+    <main className=" flex flex-wrap justify-center pt-20">
       <PricingTable />
-    </main >
-  )
-}
+    </main>
+  );
+};
 
-export default page
+export default page;

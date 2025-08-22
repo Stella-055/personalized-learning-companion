@@ -21,13 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-    <html lang="en">
-      <body className={`${bricolage.variable} antialiased`}>
-       
+      <html lang="en">
+        <body className={`${bricolage.variable} antialiased`}>
           <Navbar />
           {children}
-        
-      </body>
-    </html></ClerkProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
