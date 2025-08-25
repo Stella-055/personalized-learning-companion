@@ -68,11 +68,11 @@ import {
         <Accordion type="multiple">
           <AccordionItem value="bookmarks">
             <AccordionTrigger className="text-2xl font-bold">
-              Bookmarked Companions {`(${bookmarkedCompanions.length})`}
+             Recent Sessions 
             </AccordionTrigger>
             <AccordionContent>
               <CompanionsList
-                companions={bookmarkedCompanions}
+                companions={sessionHistory}
                 title="Bookmarked Companions"
               />
             </AccordionContent>

@@ -40,6 +40,9 @@ const Nav = () => {
           ))}
         </nav>
         <SignedOut>
+          <SignUpButton>
+            SignUp
+          </SignUpButton>
           <SignInButton>
             <button className="btn-signin">Sign In</button>
           </SignInButton>
