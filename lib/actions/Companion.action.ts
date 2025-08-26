@@ -42,8 +42,10 @@ export const getAllCompanions = async ({
 
   const { data: companions, error } = await query;
 
-  if (error) throw new Error(error.message);
 
+  if (error) {
+    throw new Error(error.message || 'Unknown Supabase error'); 
+  }
   return companions;
 };
 

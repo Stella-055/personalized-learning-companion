@@ -25,7 +25,7 @@ import {
   
   
     return (
-      <main className="min-lg:w-3/4">
+      <main className="min-lg:w-3/4 pt-20">
         <section className="flex justify-between gap-4 max-sm:flex-col items-center">
           <div className="flex gap-4 items-center">
             <Image
@@ -66,17 +66,7 @@ import {
           </div>
         </section>
         <Accordion type="multiple">
-          <AccordionItem value="bookmarks">
-            <AccordionTrigger className="text-2xl font-bold">
-             Recent Sessions 
-            </AccordionTrigger>
-            <AccordionContent>
-              <CompanionsList
-                companions={sessionHistory}
-                title="Bookmarked Companions"
-              />
-            </AccordionContent>
-          </AccordionItem>
+          
           <AccordionItem value="recent">
             <AccordionTrigger className="text-2xl font-bold">
               Recent Sessions

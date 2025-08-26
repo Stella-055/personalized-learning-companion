@@ -10,7 +10,7 @@ const page =  async () => {
 
     const canCreateCompanion = await newCompanionPermissions();
   return (
-    <main className="min-lg:w-1/3 min-md:w-2/3 items-center justify-center">
+    <main className="min-lg:w-1/3 min-md:w-2/3 items-center justify-center pt-20">
             {canCreateCompanion ? (
                 <article className="w-full gap-4 flex flex-col">
                     <h1>Companion Builder</h1>

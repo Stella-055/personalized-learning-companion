@@ -6,12 +6,12 @@ const isPublicRoute = createRouteMatcher([
   "/",
   "/companion",
 ]);
-export default clerkMiddleware();
-/*export default clerkMiddleware(async (auth, req) => {
+
+export default clerkMiddleware(async (auth, req) => {
   if (!isPublicRoute(req)) {
     await auth.protect()
   }
-}) */
+})
 
 export const config = {
   matcher: [

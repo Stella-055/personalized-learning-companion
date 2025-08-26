@@ -17,7 +17,7 @@ const CompanionSession = async ({ params }: CompanionSessionPageProps) => {
   const { name, subject, title, topic, duration } = companion;
 
   return (
-    <main>
+    <main className="pt-20">
       <article className="flex rounded-border justify-between p-6 max-md:flex-col">
         <div className="flex items-center gap-2">
           <div
