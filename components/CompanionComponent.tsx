@@ -99,7 +99,7 @@ const CompanionComponent = ({
       serverMessages: [],
     };
 
-    // @ts-expect-error
+    // @ts-expect-error  @typescript-eslint/Types of property 'clientMessages' are incompatible.
     vapi.start(configureAssistant(voice, style), assistantOverrides);
   };
 

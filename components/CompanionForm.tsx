@@ -24,7 +24,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { createCompanion } from "@/lib/actions/Companion.action";
 import { redirect } from "next/navigation";
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const formSchema = z.object({
   name: z.string().min(1, { message: "Companion is required." }),
   subject: z.string().min(1, { message: "Subject is required." }),
