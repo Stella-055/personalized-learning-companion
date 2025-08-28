@@ -50,12 +50,7 @@ const CompanionComponent = ({
       addToSessionHistory(companionId);
     };
 
-    const onMessage = (message: any) => {
-      if (message.type === "transcript" && message.transcriptType === "final") {
-        const newMessage = { role: message.role, content: message.transcript };
-        setMessages((prev) => [newMessage, ...prev]);
-      }
-    };
+
 
     const onSpeechStart = () => setIsSpeaking(true);
     const onSpeechEnd = () => setIsSpeaking(false);
@@ -64,7 +59,12 @@ const CompanionComponent = ({
 
     vapi.on("call-start", onCallStart);
     vapi.on("call-end", onCallEnd);
-    vapi.on("message", onMessage);
+    vapi.on("message", (message) => {
+      if (message.type === "transcript" && message.transcriptType === "final") {
+        const newMessage = { role: message.role, content: message.transcript };
+        setMessages((prev) => [newMessage, ...prev]);
+      }
+    });
     vapi.on("error", onError);
     vapi.on("speech-start", onSpeechStart);
     vapi.on("speech-end", onSpeechEnd);
@@ -72,12 +72,17 @@ const CompanionComponent = ({
     return () => {
       vapi.off("call-start", onCallStart);
       vapi.off("call-end", onCallEnd);
-      vapi.off("message", onMessage);
+      vapi.off("message", (message) => {
+        if (message.type === "transcript" && message.transcriptType === "final") {
+          const newMessage = { role: message.role, content: message.transcript };
+          setMessages((prev) => [newMessage, ...prev]);
+        }
+      });
       vapi.off("error", onError);
       vapi.off("speech-start", onSpeechStart);
       vapi.off("speech-end", onSpeechEnd);
     };
-  }, []);
+  }, [companionId]);
 
   const toggleMicrophone = () => {
     const isMuted = vapi.isMuted();
