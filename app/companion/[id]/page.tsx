@@ -4,11 +4,8 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import CompanionComponent from "@/components/CompanionComponent";
 import { getSubjectColor } from "@/lib/utils";
-interface CompanionSessionPageProps {
-  params: { id: string };
-}
 
-const CompanionSession = async ({ params }: CompanionSessionPageProps) => {
+const CompanionSession = async ({ params }: { params: { id: string } }) => {
   const { id } = params;
   const companion = await getCompanion(id);
 
