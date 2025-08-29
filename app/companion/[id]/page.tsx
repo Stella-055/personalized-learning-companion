@@ -12,8 +12,7 @@ const CompanionSession = async ({ params }: { params: { id: string } }) => {
   const user = await currentUser();
   if (!user) redirect("/sign-in");
   const { name, subject, topic, duration } = companion;
-
-  return (
+return (
     <main className="pt-20">
       <article className="flex rounded-border justify-between p-6 max-md:flex-col">
         <div className="flex items-center gap-2">
