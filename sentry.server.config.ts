@@ -3,7 +3,6 @@
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
 import * as Sentry from "@sentry/nextjs";
-
 Sentry.init({
   dsn: "https://569f40581da0280f679292c39aadbded@o4509888970096640.ingest.us.sentry.io/4509889032159232",
 
