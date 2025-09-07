@@ -4,9 +4,12 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import CompanionComponent from "@/components/CompanionComponent";
 import { getSubjectColor } from "@/lib/utils";
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
 
-const CompanionSession = async ({ params }: { params: { id: string } }) => {
-  const { id } = params;
+export default async function CompanionSession({ params }: PageProps) {
+  const { id } =  await params;
   const companion = await getCompanion(id);
 
   const user = await currentUser();
@@ -51,4 +54,4 @@ return (
   );
 };
 
-export default CompanionSession;
+
