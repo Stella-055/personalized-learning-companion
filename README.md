@@ -1,4 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Companion Learning SaaS
+
+A SaaS learning platform where users can create personalized AI-powered companions using **Vapi voice**.  
+These companions help users learn interactively through voice conversations.  
+Users can also explore and engage with companions created by others, making learning more collaborative and dynamic.
+
+## Features
+-  Create your own voice-based learning companion
+-  Browse and interact with companions built by the community
+- SaaS-based platform (scalable, multi-tenant)
+-  Personalized and engaging learning experience
+
+## Tech Stack
+- **Next.js (App Router)** – Frontend & SSR
+- **Supabase** – Database & authentication
+- **Clerk** – User management
+- **Vapi** – Voice-powered AI companions
+
+<img width="1342" height="646" alt="image" src="https://github.com/user-attachments/assets/3542c996-ef2b-4325-bbe1-a234e380d9e3" />
 
 ## Getting Started
 
