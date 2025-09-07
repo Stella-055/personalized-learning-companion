@@ -4,16 +4,18 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import CompanionComponent from "@/components/CompanionComponent";
 import { getSubjectColor } from "@/lib/utils";
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
 
-const CompanionSession = async ({ params }: { params: { id: string } }) => {
-  const { id } = params;
+export default async function CompanionSession({ params }: PageProps) {
+  const { id } =  await params;
   const companion = await getCompanion(id);
 
   const user = await currentUser();
   if (!user) redirect("/sign-in");
   const { name, subject, topic, duration } = companion;
-
-  return (
+return (
     <main className="pt-20">
       <article className="flex rounded-border justify-between p-6 max-md:flex-col">
         <div className="flex items-center gap-2">
@@ -52,4 +54,4 @@ const CompanionSession = async ({ params }: { params: { id: string } }) => {
   );
 };
 
-export default CompanionSession;
+

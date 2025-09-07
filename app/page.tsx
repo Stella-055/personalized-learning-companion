@@ -1,3 +1,5 @@
+
+export const dynamic = "force-dynamic";
 import CompanionCard from "@/components/CompanionCard";
 import CompanionList from "@/components/CompanionList";
 import Cta from "@/components/Cta";
@@ -8,7 +10,9 @@ import {
   getAllCompanions,
   getRecentSessions,
 } from "@/lib/actions/Companion.action";
+
 export default async function Home() {
+
   const companions = await getAllCompanions({ limit: 3 });
   const recentSessionsCompanions = await getRecentSessions(10);
 
