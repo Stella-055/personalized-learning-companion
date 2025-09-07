@@ -12,8 +12,8 @@ Users can also explore and engage with companions created by others, making lear
 
 ## Tech Stack
 - **Next.js (App Router)** – Frontend & SSR
-- **Supabase** – Database & authentication
-- **Clerk** – User management
+- **Supabase** – Database 
+- **Clerk** – User management (billing and authentication)
 - **Vapi** – Voice-powered AI companions
 
 <img width="1342" height="646" alt="image" src="https://github.com/user-attachments/assets/3542c996-ef2b-4325-bbe1-a234e380d9e3" />
